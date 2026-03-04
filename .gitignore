@@ -1,23 +1,26 @@
-*.DS_Store
+.DS_Store
 *.pyc
-*.swp
-temp/*
-dist/*
-build/*
-keras/datasets/data/*
-keras/datasets/temp/*
-docs/site/*
-docs/theme/*
-docs/sources/*
-tags
-Keras.egg-info
-examples/img/*
-
-# test-related
-.coverage
-.cache
+.vscode-test
+__pycache__
+**/.vscode-test/**
+**/.vscode test/**
+**/.vscode-smoke/**
+**/.venv*/
+venv
+bin/**
+build/**
+obj/**
 .pytest_cache
-
-# developer environments
-.idea
+tmp/**
+.vs/
+dist/**
+**/*.egg-info/*
 .vscode
+examples/**/*.jpg
+.python-version
+.coverage
+*coverage.xml
+.ruff_cache
+
+pytest.ini
+venv/

@@ -1,26 +1,13 @@
-from __future__ import absolute_import
+# This file should NEVER be packaged! This is a hack to make "import keras" from
+# the base of the repo just import the source files. We'll keep it for compat.
 
-from . import utils
-from . import activations
-from . import applications
-from . import backend
-from . import datasets
-from . import engine
-from . import layers
-from . import preprocessing
-from . import wrappers
-from . import callbacks
-from . import constraints
-from . import initializers
-from . import metrics
-from . import models
-from . import losses
-from . import optimizers
-from . import regularizers
+import os  # isort: skip
 
-# Also importable from root
-from .layers import Input
-from .models import Model
-from .models import Sequential
+# Add everything in /api/ to the module search path.
+__path__.append(os.path.join(os.path.dirname(__file__), "api"))  # noqa: F405
 
-__version__ = '2.1.6'
+from keras.api import *  # noqa: F403, E402
+from keras.api import __version__  # noqa: E402
+
+# Don't pollute namespace.
+del os
